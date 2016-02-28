@@ -12,7 +12,7 @@ node_js:
  
    
 build:  
-  ci:  
+  ci:    
     - node --version
   
   
