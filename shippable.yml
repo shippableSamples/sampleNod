@@ -19,6 +19,7 @@ notifications:
     recipients:
       - sreyaj10@gmail.com
       - sreya@shippable.com
+    on_start: always
     on_success: always     
     on_failure: change            
 
