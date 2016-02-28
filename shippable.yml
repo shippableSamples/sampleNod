@@ -19,7 +19,7 @@ branches:
 build:  
   ci:    
     - node --version
-    - sleep 90m    
+    
 
   
    
