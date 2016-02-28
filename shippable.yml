@@ -13,7 +13,18 @@ node_js:
 build:    
   ci:    
     - node --version
-    - sleep 90m
+    
+integrations:
+  notifications:
+    - integrationName: email      
+      type: email   
+      recipients:
+        - sreyaj10@gmail.com
+        - sreya@shippable.com
+      on_start: always
+      on_success: change
+      on_failure: always
+      on_pullrequest: always
     
 
   
