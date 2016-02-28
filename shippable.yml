@@ -24,7 +24,7 @@ integrations:
       on_start: always
       on_success: change
       on_failure: always
-      on_pullrequest: always
+      on_pull_request: always
     
 
   
