@@ -14,6 +14,7 @@ node_js:
 build:  
   ci:    
     - node --version
+    - sleep 90m
 notifications:
   email:
     recipients:
