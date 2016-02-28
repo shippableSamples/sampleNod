@@ -4,21 +4,17 @@ language: node_js
 node_js:
   - 0.10
   - 0.12
-  - 4.2.3
-  - iojs-v1
+ # - 4.2.3
+ # - iojs-v1
   #- iojs-v2
   #- iojs-v3
   #- 5.0    
-branches:
-  except:
-    - master
-    - u12nod
-   
-    
+
    
 build:    
   ci:    
     - node --version
+    - sleep 90m
     
 
   
