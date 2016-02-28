@@ -16,7 +16,7 @@ branches:
    
     
    
-build:  
+build:    
   ci:    
     - node --version
     
