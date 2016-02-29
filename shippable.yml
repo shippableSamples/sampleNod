@@ -13,7 +13,7 @@ node_js:
 build:    
   ci:    
     - node --version
-    -yjhkg;lfdghg
+    -yjhkg;lfdghghj
     
 integrations:
   notifications:
