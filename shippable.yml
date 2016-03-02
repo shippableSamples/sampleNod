@@ -5,14 +5,13 @@ node_js:
   - 0.10
   - 4.2.3
   - iojs-v1
-  #- iojs-v2
-  #- iojs-v3
- # - 5.0    
+  - iojs-v2
+  - iojs-v3
+  - 5.0    
 
 build:    
   ci:    
     - node --version
-    -yjhkg;lfdghghj
     
 integrations:
   notifications:
