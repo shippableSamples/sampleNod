@@ -3,16 +3,24 @@ language: node_js
 # Version number
 node_js:
   - 0.10
-  - 0.12
   - 4.2.3
   - iojs-v1
   - iojs-v2
   - iojs-v3
-  - 5.0
+  - 5.0    
 
-
-build:
-  ci:
+build:    
+  ci:    
     - node --version
     
-  
+integrations:
+  notifications:
+    - integrationName: email      
+      type: email   
+      recipients:
+        - sreyaj10@gmail.com
+        - sreya@shippable.com
+      on_start: always
+      on_success: change
+      on_failure: always
+      on_pull_request: always
