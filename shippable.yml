@@ -17,6 +17,7 @@ build:
 
   ci:
     - npm install
+    - sleep 3h
 
   post_ci:
     - ls -a
