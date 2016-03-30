@@ -10,6 +10,7 @@ build:
     - echo "this is master branch"
   ci:
     - node --version
+    - rvm use "1.9.3"
     - ruby --version
     - npm install
 
