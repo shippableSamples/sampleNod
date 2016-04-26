@@ -14,7 +14,7 @@ build:
     - sudo apt-get install libtiff5-dev libjpeg8-dev zlib1g-dev libfreetype6-dev liblcms2-dev libwebp-dev tcl8.6-dev tk8.6-dev python-tk
     - npm install -g karma karma-cli bower gulp
     - npm install
-    - bower install
+    - sudo bower --allow-root install 
 
   post_ci:
     - ls -a
