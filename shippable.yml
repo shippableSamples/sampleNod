@@ -10,9 +10,11 @@ build:
     - echo "this is master branch"
   ci:
     - node --version
-    - rvm use "1.9.3"
-    - ruby --version
+    - sudo apt-get update
+    - sudo apt-get install libtiff5-dev libjpeg8-dev zlib1g-dev libfreetype6-dev liblcms2-dev libwebp-dev tcl8.6-dev tk8.6-dev python-tk
+    - npm install -g karma karma-cli bower gulp
     - npm install
+    - bower install
 
   post_ci:
     - ls -a
