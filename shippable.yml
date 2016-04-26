@@ -5,15 +5,16 @@ node_js:
   - 0.10
   - 0.12
   - 4.2.3
-  - iojs-v1
-  - iojs-v2
-  - iojs-v3
-  - 5.0    
+  #- iojs-v1
+  #- iojs-v2
+  #- iojs-v3
+  #- 5.0    
 
 build:    
   ci:    
     - node --version
-    - yuhk
+    - sleep 5m
+  
     
 integrations:
   notifications:
