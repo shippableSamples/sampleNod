@@ -6,17 +6,15 @@ node_js:
   - 0.12
 
 build:
-  pre_ci_boot:
-    image_name: drydock/u14nod
-    image_tag: prod
-    pull: true
-    options: '--privileged=true --net=bridge -e FOO=true -e BOO=false'
-
   pre_ci:
     - echo "this is master branch"
-
   ci:
+    - node --version
+    - sudo apt-get update
+    - sudo apt-get install libtiff5-dev libjpeg8-dev zlib1g-dev libfreetype6-dev liblcms2-dev libwebp-dev tcl8.6-dev tk8.6-dev python-tk
+    - npm install -g karma karma-cli bower gulp
     - npm install
+    - sudo bower --allow-root install 
 
   post_ci:
     - ls -a
@@ -26,4 +24,5 @@ build:
 
   cache_dir_list: 
     - $SHIPPABLE_BUILD_DIR/node_modules
+    - $SHIPPABLE_BUILD_DIR/.git
 
