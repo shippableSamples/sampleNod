@@ -4,7 +4,7 @@ language: node_js
 # Version number
 node_js:
   - 0.12
-  #- 5.0
+  - 5.0
   #- 0.11
   
 build:
@@ -23,18 +23,19 @@ build:
   post_ci:
     - ls -a
     - pwd
+    - ps wq
 
   #cache: true
 
  # cache_dir_list: 
    # - $SHIPPABLE_BUILD_DIR/node_modules
 
-integrations:
-  notifications:
-    - integrationName: sample_java
-      type: webhook
-      payload:
-        - API_URL=$SHIPPABLE_API_URL
+#integrations:
+#  notifications:
+   # - integrationName: sample_java
+   #   type: webhook
+   #   payload:
+    #    - API_URL=$SHIPPABLE_API_URL
      #   - CONTAINER_NAME=$SHIPPABLE_CONTAINER_NAME
      #   - FOO=bar
      #   - BOO=buzz
