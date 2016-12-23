@@ -23,7 +23,6 @@ build:
   post_ci:
     - ls -a
     - pwd
-    - ps wq
 
   #cache: true
 
