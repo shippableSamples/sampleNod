@@ -15,7 +15,7 @@ build:
   pre_ci_boot:
     image_name: drydock/u14nodpls #shippabledocker/pipelinev2 #shippabledocker/sample_node_pvt # 
     image_tag: prod #deploy.1 #latest #
-    pull: true
+    pull: false
     options: '--privileged=true --net=bridge -e FOO=true -e BOO=false'    
     
   ci:
