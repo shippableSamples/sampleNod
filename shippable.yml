@@ -1,38 +1,39 @@
-# Language setting
 language: node_js
 
 # Version number
 node_js:
   - 0.12
-  #- 5.0
+ # - 5.0
   #- 0.11
   
 build:
-  #cache: true
-  pre_ci:
-    - docker build -t=shiphitchcock1/cock1_nod_branch1  
-       
+ # pre_ci:
+  #  - docker build -t=quay.io/revathird/cock1_nod_multipush56 .
+  #  - docker build -t=shippabledocker/cock1_nod_multipush56push .
+
   pre_ci_boot:
-    image_name: drydock/u14nodpls #shippabledocker/pipelinev2 #shippabledocker/sample_node_pvt # 
-    image_tag: prod #deploy.1 #latest #
-    pull: false
-    options: '--privileged=true --net=bridge -e FOO=true -e BOO=false'    
-    
+    image_name: drydock/u12nod
+    image_tag: prod
+    pull: true
+    options: '--privileged=true --net=bridge -e FOO=true -e BOO=false'
+
   ci:
     - ps -eax
     - ls -al
-    - node --version 
 
   post_ci:
-    - docker push shiphitchcock1/cock1_nod_branch1
+    - docker build -t=shippabledocker/cock1_nod_multipush56:multi123 .    
+    - docker push shippabledocker/cock1_nod_multipush56:multi123
+  #  - docker build -t=shippabledocker/cock1_nod_multipush56push .    
+   # - docker push shippabledocker/cock1_nod_multipush56push
 
 integrations:
   hub:
     - integrationName: docker
-      type: docker 
-    #  branches:
-     #   only:
-       #   - master
+      type: docker    
+      branches:
+        only:
+          - master
        
 #  notifications:
    # - integrationName: sample_java
