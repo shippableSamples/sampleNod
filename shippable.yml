@@ -8,28 +8,31 @@ node_js:
   #- 0.11
   
 build:
-  pre_ci_boot:
-    image_name: drydock/u14nod
-    image_tag: prod
-    pull: true
-    options: '--privileged=true --net=bridge -e FOO=true -e BOO=false'
-
+  #cache: true
   pre_ci:
-    - echo "this is master branch"
-
+    - docker build -t=shippabledocker/cock1_nod_vsecenv11 .    
+       
+  pre_ci_boot:
+    image_name: shippabledocker/pipelinev2 #shippabledocker/sample_node_pvt #drydock/u14nodpls # 
+    image_tag: deploy.1 #prod #
+    pull: false
+    #options: '--privileged=true --net=bridge -e FOO=true -e BOO=false'    
+    
   ci:
-    - npm install
+    - ps -eax
+    - ls -al
+    - node --version 
 
   post_ci:
-    - ls -a
-    - pwd
+    - docker push shippabledocker/cock1_nod_vsecenv11 
 
-  #cache: true
-
- # cache_dir_list: 
-   # - $SHIPPABLE_BUILD_DIR/node_modules
-
-#integrations:
+integrations:
+  hub:
+    - integrationName: docker
+      type: docker
+      branches:
+        only:
+          - master
 #  notifications:
    # - integrationName: sample_java
    #   type: webhook
