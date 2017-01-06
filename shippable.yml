@@ -10,7 +10,7 @@ node_js:
 build:
   #cache: true
   pre_ci:
-    - docker build -t=shippabledocker/cock1_nod_branch1  
+    - docker build -t=shiphitchcock1/cock1_nod_branch1  
        
   pre_ci_boot:
     image_name: drydock/u14nodpls #shippabledocker/pipelinev2 #shippabledocker/sample_node_pvt # 
@@ -24,7 +24,7 @@ build:
     - node --version 
 
   post_ci:
-    - docker push shippabledocker/cock1_nod_branch1
+    - docker push shiphitchcock1/cock1_nod_branch1
 
 integrations:
   hub:
@@ -33,6 +33,7 @@ integrations:
     #  branches:
      #   only:
        #   - master
+       
 #  notifications:
    # - integrationName: sample_java
    #   type: webhook
