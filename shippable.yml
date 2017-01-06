@@ -30,9 +30,9 @@ integrations:
   hub:
     - integrationName: docker
       type: docker
-      branches:
-        only:
-          - master
+    #  branches:
+     #   only:
+       #   - master
 #  notifications:
    # - integrationName: sample_java
    #   type: webhook
