@@ -9,13 +9,13 @@ node_js:
   
 build:
   #cache: true
-  pre_ci:
-    - docker build -t=shippabledocker/cock1_nod_vsecenv11 .    
+#  pre_ci:
+  #  - docker build -t=shippabledocker/cock1_nod_vsecenv11 .    
        
-  pre_ci_boot:
-    image_name: shippabledocker/pipelinev2 #shippabledocker/sample_node_pvt #drydock/u14nodpls # 
-    image_tag: deploy.1 #prod #
-    pull: true
+ # pre_ci_boot:
+ #   image_name: shippabledocker/pipelinev2 #shippabledocker/sample_node_pvt #drydock/u14nodpls # 
+  #  image_tag: deploy.1 #prod #
+  #  pull: true
     #options: '--privileged=true --net=bridge -e FOO=true -e BOO=false'    
     
   ci:
@@ -23,8 +23,8 @@ build:
     - ls -al
     - node --version 
 
-  post_ci:
-    - docker push shippabledocker/cock1_nod_vsecenv11 
+ # post_ci:
+  #  - docker push shippabledocker/cock1_nod_vsecenv11 
 
 integrations:
   hub:
