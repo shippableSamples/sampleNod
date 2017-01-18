@@ -6,14 +6,14 @@ node_js:
   - 5.0
   #- 0.11
   
-services:
-  - mysql
-  - postgres
-  - redis
-  - memcache
-  - elasticsearch
-  - mongodb
-  - rabbitmq
+#services:
+#  - mysql
+#  - postgres
+#  - redis
+#  - memcache
+ # - elasticsearch
+#  - mongodb
+ # - rabbitmq
   
 build:
  # pre_ci:
