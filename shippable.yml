@@ -6,6 +6,15 @@ node_js:
  # - 5.0
   #- 0.11
   
+services:
+  - mysql
+  - postgres
+  - redis
+  - memcache
+  - elasticsearch
+  - mongodb
+  - rabbitmq
+  
 build:
  # pre_ci:
   #  - docker build -t=quay.io/revathird/cock1_nod_multipush56 .
@@ -21,9 +30,9 @@ build:
     - ps -eax
     - ls -al
 
-  post_ci:
-    - docker build -t=shippabledocker/cock1_nod_multipush56:multi123 .    
-    - docker push shippabledocker/cock1_nod_multipush56:multi123
+  #post_ci:
+    #- docker build -t=shippabledocker/cock1_nod_multipush56:multi123 .    
+    #- docker push shippabledocker/cock1_nod_multipush56:multi123
   #  - docker build -t=shippabledocker/cock1_nod_multipush56push .    
    # - docker push shippabledocker/cock1_nod_multipush56push
 
