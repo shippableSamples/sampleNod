@@ -6,14 +6,14 @@ node_js:
  # - 5.0
   #- 0.11
   
-#services:
- # - mysql
-  #- postgres
-  #- redis
-  #- memcache
-  #- elasticsearch
- # - mongodb
-  #- rabbitmq
+services:
+  - mysql
+  - postgres
+  - redis
+  - memcache
+  - elasticsearch
+  - mongodb
+  - rabbitmq
   
 build:
  # pre_ci:
@@ -21,7 +21,7 @@ build:
   #  - docker build -t=shippabledocker/cock1_nod_multipush56push .
 
   pre_ci_boot:
-    image_name: drydock/u12nod
+    image_name: drydock/u12nodpls
     image_tag: prod
     pull: true
     options: '--privileged=true --net=bridge -e FOO=true -e BOO=false'
