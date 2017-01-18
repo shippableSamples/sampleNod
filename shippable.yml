@@ -11,8 +11,8 @@ services:
   - postgres
   - redis
   - memcache
-  - elasticsearch
-  - mongodb
+ # - elasticsearch
+ # - mongodb
   - rabbitmq
   
 build:
