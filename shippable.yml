@@ -42,7 +42,7 @@ integrations:
       type: docker    
       branches:
         only:
-          - master
+          - master  
        
 #  notifications:
    # - integrationName: sample_java
