@@ -45,16 +45,13 @@ integrations:
         only:
           - master  
        
-#  notifications:
-   # - integrationName: sample_java
-   #   type: webhook
-   #   payload:
-    #    - API_URL=$SHIPPABLE_API_URL
-     #   - CONTAINER_NAME=$SHIPPABLE_CONTAINER_NAME
-     #   - FOO=bar
-     #   - BOO=buzz
-     # on_start: always
-     # on_success: always
-     # on_failure: always
-     # on_pull_request: always
+  notifications:
+    - integrationName: ci-img1
+      type: webhook
+      payload:
+        - versionName=Shippable Run $BUILD_NUMBER 
+      on_start: always
+      on_success: always
+      on_failure: always
+      on_pull_request: always 
  
