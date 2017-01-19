@@ -6,14 +6,14 @@ node_js:
   - 5.0
   #- 0.11
   
-services:
-  - mysql
-  - postgres
+#services:
+  #- mysql
+ # - postgres
   #- redis
-  - memcache
-  - elasticsearch
-  - mongodb
-  - rabbitmq
+  #- memcache
+  #- elasticsearch
+ # - mongodb
+ # - rabbitmq
  # - cassandra
   
 build:
@@ -45,10 +45,10 @@ integrations:
         only:
           - master  
        
-  notifications:
-    - integrationName: ci-img1
-      type: webhook
-      payload:
-        - versionName=Shippable Run $BUILD_NUMBER 
+ # notifications:
+   # - integrationName: ci-img1
+    #  type: webhook
+    #  payload:
+      #  - versionName=Shippable Run $BUILD_NUMBER 
       
  
