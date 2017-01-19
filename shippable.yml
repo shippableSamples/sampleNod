@@ -45,10 +45,10 @@ integrations:
         only:
           - master  
        
- # notifications:
-   # - integrationName: ci-img1
-    #  type: webhook
-    #  payload:
-      #  - versionName=Shippable Run $BUILD_NUMBER 
+  notifications:
+    - integrationName: ci-img1
+      type: webhook
+      payload:
+        - versionName=Shippable Run $BUILD_NUMBER 
       
  
