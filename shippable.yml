@@ -30,6 +30,8 @@ build:
   ci:
     - ps -eax
     - ls -al
+    - cs ps
+    
 
   #post_ci:
     #- docker build -t=shippabledocker/cock1_nod_multipush56:multi123 .    
