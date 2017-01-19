@@ -9,12 +9,12 @@ node_js:
 services:
   - mysql
   - postgres
-  - redis
+  #- redis
   - memcache
   - elasticsearch
   - mongodb
   - rabbitmq
-  - cassandra
+ # - cassandra
   
 build:
  # pre_ci:
