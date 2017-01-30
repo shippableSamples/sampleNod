@@ -17,8 +17,9 @@ node_js:
  # - cassandra
  
 env: 
-  - FOO=BOO
-  - COMMITER=VARSHA
+  global:
+    - FOO=BOO
+    - COMMITER=VARSHA
   
 build:
  # pre_ci:
