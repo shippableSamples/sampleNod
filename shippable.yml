@@ -15,6 +15,10 @@ node_js:
  # - mongodb
  # - rabbitmq
  # - cassandra
+ 
+ env: 
+  - FOO=BOO
+  - COMMITER=VARSHA
   
 build:
  # pre_ci:
