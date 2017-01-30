@@ -16,7 +16,7 @@ node_js:
  # - rabbitmq
  # - cassandra
  
- env: 
+env: 
   - FOO=BOO
   - COMMITER=VARSHA
   
