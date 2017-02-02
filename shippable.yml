@@ -53,10 +53,46 @@ build:
        # only:
         #  - master  
        
- # notifications:
-   # - integrationName: ci-img1
+  notifications:
+  
+  #  - integrationName: proj-sampleNod
     #  type: webhook
     #  payload:
-    #    - versionName=Shippable Run $BUILD_NUMBER 
+     #   - API_URL=$SHIPPABLE_API_URL
+     #   - CONTAINER_NAME=$SHIPPABLE_CONTAINER_NAME
+     #   - FOO=bar
+     #   - BOO=buzz
+    #  on_start: always
+    #  on_success: never
+     # on_failure: always
+      
+    - integrationName: email
+      type: email
+      recipients: 
+        - shiphitchcock1@gmail.com
+       # - varsha@shippable.com
+      on_start: always
+      on_success: always
+      on_failure: always
+      on_pull_request: never
+      
+    - integrationName: slack
+      type: slack
+      recipients:
+        - "#public-chnl"
+        - pvt-channel
+      on_start: always  
+      on_success: always
+      on_failure: always
+      on_pull_request: never
+      
+    - integrationName: irc
+      type: irc
+      recipients:
+        - "chat.freenode.net#test1"
+      on_start: always
+      on_success: always
+      on_failure: always
+      on_pull_request: always 
       
  
