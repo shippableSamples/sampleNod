@@ -3,7 +3,7 @@ language: node_js
 # Version number
 node_js:
   - 0.12
-  - 5.0
+  #- 5.0
   #- 0.11
   
 #services:
@@ -16,10 +16,10 @@ node_js:
  # - rabbitmq
  # - cassandra
  
-env: 
-  global:
-    - FOO=BOO
-    - COMMITER=VARSHA
+#env: 
+#  global:
+#    - FOO=BOO
+  #  - COMMITER=VARSHA
   
 build:
  # pre_ci:
@@ -44,13 +44,13 @@ build:
   #  - docker build -t=shippabledocker/cock1_nod_multipush56push .    
    # - docker push shippabledocker/cock1_nod_multipush56push
 
-integrations:
-  hub:
-    - integrationName: docker
-      type: docker    
-      branches:
-        only:
-          - master  
+#integrations:
+  #hub:
+    #- integrationName: docker
+    #  type: docker    
+     # branches:
+       # only:
+        #  - master  
        
  # notifications:
    # - integrationName: ci-img1
