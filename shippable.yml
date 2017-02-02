@@ -15,6 +15,7 @@ node_js:
  # - mongodb
  # - rabbitmq
  # - cassandra
+ # - selenium
  
 #env: 
 #  global:
