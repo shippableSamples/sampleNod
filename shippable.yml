@@ -45,7 +45,7 @@ build:
   #  - docker build -t=shippabledocker/cock1_nod_multipush56push .    
    # - docker push shippabledocker/cock1_nod_multipush56push
 
-#integrations:
+integrations:
   #hub:
     #- integrationName: docker
     #  type: docker    
@@ -76,15 +76,15 @@ build:
       on_failure: always
       on_pull_request: never
       
-    - integrationName: slack
-      type: slack
-      recipients:
-        - "#public-chnl"
-        - pvt-channel
-      on_start: always  
-      on_success: always
-      on_failure: always
-      on_pull_request: never
+  #  - integrationName: slack
+   #   type: slack
+   #   recipients:
+   #     - "#public-chnl"
+   #     - pvt-channel
+   #   on_start: always  
+   #   on_success: always
+   #   on_failure: always
+   #   on_pull_request: never
       
     - integrationName: irc
       type: irc
