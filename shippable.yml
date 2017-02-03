@@ -40,7 +40,7 @@ build:
     
 
   post_ci:
-    - docker push shippabledocker/sample_node:$BUILD_NUMBER .
+    - docker push shippabledocker/sample_node:$BRANCH.$BUILD_NUMBER
     #- docker build -t=shippabledocker/cock1_nod_multipush56:multi123 .    
     #- docker push shippabledocker/cock1_nod_multipush56:multi123
   #  - docker build -t=shippabledocker/cock1_nod_multipush56push .    
