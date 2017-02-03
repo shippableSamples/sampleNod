@@ -23,15 +23,15 @@ node_js:
   #  - COMMITER=VARSHA
   
 build:
- # pre_ci:
+  pre_ci:
   #  - docker build -t=quay.io/revathird/cock1_nod_multipush56 .
-  #  - docker build -t=shippabledocker/cock1_nod_multipush56push .
+    - docker build -t=shippabledocker/sample_node .
 
-  #pre_ci_boot:
-   # image_name: drydock/u12nodpls
-   # image_tag: prod
-   # pull: true
-    #options: '--privileged=true --net=bridge -e FOO=true -e BOO=false'
+  pre_ci_boot:
+    image_name: drydock/u14nodall
+    image_tag: prod
+    pull: false
+    options: '--privileged=false --net=bridge -e FOO=true -e BOO=false'
 
   ci:
     - ps -eax
@@ -39,16 +39,17 @@ build:
   #  - cs ps
     
 
-  #post_ci:
+  post_ci:
+    - docker push shippabledocker/sample_node:$BUILD_NUMBER .
     #- docker build -t=shippabledocker/cock1_nod_multipush56:multi123 .    
     #- docker push shippabledocker/cock1_nod_multipush56:multi123
   #  - docker build -t=shippabledocker/cock1_nod_multipush56push .    
    # - docker push shippabledocker/cock1_nod_multipush56push
 
 integrations:
-  #hub:
-    #- integrationName: docker
-    #  type: docker    
+  hub:
+    - integrationName: docker
+      type: docker    
      # branches:
        # only:
         #  - master  
