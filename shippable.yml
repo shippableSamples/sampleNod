@@ -25,7 +25,7 @@ node_js:
 build:
   pre_ci:
   #  - docker build -t=quay.io/revathird/cock1_nod_multipush56 .
-    - docker build -t=shippabledocker/sample_node .
+    - docker build -t=shippabledocker/sample_node:$BRANCH.$BUILD_NUMBER .
 
   pre_ci_boot:
     image_name: drydock/u14nodall
