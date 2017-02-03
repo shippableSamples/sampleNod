@@ -1,29 +1,99 @@
-# Language setting
 language: node_js
 
 # Version number
 node_js:
   - 0.12
-
+  #- 5.0
+  #- 0.11
+  
+#services:
+  #- mysql
+ # - postgres
+  #- redis
+  #- memcache
+  #- elasticsearch
+ # - mongodb
+ # - rabbitmq
+ # - cassandra
+ # - selenium
+ 
+#env: 
+#  global:
+#    - FOO=BOO
+  #  - COMMITER=VARSHA
+  
 build:
-  pre_ci_boot:
-    image_name: drydock/u14nod
-    image_tag: prod
-    pull: true
-    options: '--privileged=true --net=bridge -e FOO=true -e BOO=false'
-
   pre_ci:
-    - echo "this is master branch"
+  #  - docker build -t=quay.io/revathird/cock1_nod_multipush56 .
+    - docker build -t=shippabledocker/sample_node:$BRANCH.$BUILD_NUMBER .
+
+  pre_ci_boot:
+    image_name: drydock/u14nodall
+    image_tag: prod
+    pull: false
+    options: '--privileged=false --net=bridge -e FOO=true -e BOO=false'
 
   ci:
-    - npm install
+    - ps -eax
+    - ls -al
+  #  - cs ps
+    
 
   post_ci:
-    - ls -a
-    - pwd
+    - docker push shippabledocker/sample_node:$BRANCH.$BUILD_NUMBER
+    #- docker build -t=shippabledocker/cock1_nod_multipush56:multi123 .    
+    #- docker push shippabledocker/cock1_nod_multipush56:multi123
+  #  - docker build -t=shippabledocker/cock1_nod_multipush56push .    
+   # - docker push shippabledocker/cock1_nod_multipush56push
 
-  cache: true
-
-  cache_dir_list: 
-    - $SHIPPABLE_BUILD_DIR/node_modules
-
+integrations:
+  hub:
+    - integrationName: docker
+      type: docker    
+     # branches:
+       # only:
+        #  - master  
+       
+  notifications:
+  
+  #  - integrationName: proj-sampleNod
+    #  type: webhook
+    #  payload:
+     #   - API_URL=$SHIPPABLE_API_URL
+     #   - CONTAINER_NAME=$SHIPPABLE_CONTAINER_NAME
+     #   - FOO=bar
+     #   - BOO=buzz
+    #  on_start: always
+    #  on_success: never
+     # on_failure: always
+      
+    - integrationName: email
+      type: email
+      recipients: 
+        - shiphitchcock1@gmail.com
+       # - varsha@shippable.com
+      on_start: always
+      on_success: always
+      on_failure: always
+      on_pull_request: never
+      
+  #  - integrationName: slack
+   #   type: slack
+   #   recipients:
+   #     - "#public-chnl"
+   #     - pvt-channel
+   #   on_start: always  
+   #   on_success: always
+   #   on_failure: always
+   #   on_pull_request: never
+      
+    - integrationName: irc
+      type: irc
+      recipients:
+        - "chat.freenode.net#test1"
+      on_start: always
+      on_success: always
+      on_failure: always
+      on_pull_request: always 
+      
+ 
